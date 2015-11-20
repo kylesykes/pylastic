@@ -33,7 +33,7 @@ def delete_index(es_url, index_name):
 # TODO: def add()   add single document
 
 
-def add_bulk(es_url, index_name, d_type, iterable):
+def add_bulk(es_url, index_name, iterable, d_type='default'):
     """Use the bulk API to load elements in iterable."""
     return requests.post('/'.join([es_url, index_name, d_type, '_bulk']), data=build_bulk_string(iterable))        
  
